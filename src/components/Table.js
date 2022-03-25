@@ -115,16 +115,7 @@ const Table = ({ rows, headings }) => {
           />
           <TableBody>
             {filtered.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-              const {
-                id,
-                name,
-                location,
-
-                status,
-                checkInTime,
-                checkOutTime,
-                avatarUrl
-              } = row;
+              const { id, name, tableLocation, status, checkIn, checkOut } = row;
               const isItemSelected = selected.indexOf(name) !== -1;
 
               return (
@@ -137,16 +128,15 @@ const Table = ({ rows, headings }) => {
                 >
                   <TableCell component="th" scope="row" padding="2px">
                     <Stack direction="row" alignItems="center" spacing={2}>
-                      <Avatar alt={name} src={avatarUrl} />
                       <Typography variant="subtitle2" noWrap>
                         {name}
                       </Typography>
                     </Stack>
                   </TableCell>
-                  <TableCell align="left">{checkInTime}</TableCell>
-                  <TableCell align="left">{checkOutTime}</TableCell>
+                  <TableCell align="left">{checkIn}</TableCell>
+                  <TableCell align="left">{checkOut}</TableCell>
 
-                  <TableCell align="left">{location}</TableCell>
+                  <TableCell align="left">{tableLocation}</TableCell>
                   <TableCell align="left">
                     <Label variant="ghost" color={statusColors[status]}>
                       {sentenceCase(status)}

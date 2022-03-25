@@ -25,8 +25,6 @@ import {
   ListItemAvatar,
   ListItemButton
 } from '@mui/material';
-// utils
-import { mockImgAvatar } from '../../utils/mockImages';
 // components
 import Scrollbar from '../../components/Scrollbar';
 import MenuPopover from '../../components/MenuPopover';
@@ -34,24 +32,6 @@ import MenuPopover from '../../components/MenuPopover';
 // ----------------------------------------------------------------------
 
 const NOTIFICATIONS = [
-  {
-    id: faker.datatype.uuid(),
-    title: 'Your order is placed',
-    description: 'waiting for shipping',
-    avatar: null,
-    type: 'order_placed',
-    createdAt: set(new Date(), { hours: 10, minutes: 30 }),
-    isUnRead: true
-  },
-  {
-    id: faker.datatype.uuid(),
-    title: faker.name.findName(),
-    description: 'answered to your comment on the Minimal',
-    avatar: mockImgAvatar(2),
-    type: 'friend_interactive',
-    createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
-    isUnRead: true
-  },
   {
     id: faker.datatype.uuid(),
     title: 'You have new message',
